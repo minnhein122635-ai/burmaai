@@ -14,7 +14,7 @@ ADMIN_ID = os.getenv("ADMIN_ID") # အစ်ကို့ရဲ့ Numeric ID (Us
 
 # Gemini Setup
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Course Context (အစ်ကိုပေးထားတဲ့ အချက်အလက်များ)
 COURSE_CONTEXT = """
@@ -212,4 +212,5 @@ if __name__ == '__main__':
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_menu_and_ai))
 
     print("Burma Ai is running...")
+
     app.run_polling()
